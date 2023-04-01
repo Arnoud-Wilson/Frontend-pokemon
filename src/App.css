@@ -1,0 +1,28 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    text-align: center;
+    background-color: #FFCB05;
+}
+
+.pokemon-logo {
+    width: 25vw;
+    margin: 35px;
+}
+
+.pokemon-tile {
+    background-color: white;
+    width: 175px;
+    padding: 8px;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
+}
+
+li {
+    list-style: none;
+    background-color: lightgray;
+    margin-bottom: 4px;
+    padding: 4px;
+}
+
+
