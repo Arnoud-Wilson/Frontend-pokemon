@@ -1,22 +1,22 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 
-
-function GetAllData() {
+function GetAllData({search}) {
     const [result, setResult] = useState({ });
     const [abilities, setAbilities] = useState([ ]);
+
 
     const getAbilities = abilities.map((single) => {
 
         return (
-            <li>{single.ability.name}</li>
+            <li key={single.slot}>{single.ability.name}</li>
         )
     })
 
     useEffect(() => {
     async function getData() {
         try {
-            const response = await axios.get("https://pokeapi.co/api/v2/pokemon/jigglypuff");
+            const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${search}/`);
 
             setResult(response.data);
             setAbilities(response.data.abilities)
@@ -26,7 +26,7 @@ function GetAllData() {
         }
     }
     void getData();
-    }, []);
+    }, [search]);
 
         return (
             Object.keys(result).length > 0 &&
@@ -42,6 +42,5 @@ function GetAllData() {
             </div>
         );
 }
-
 
 export default GetAllData;
