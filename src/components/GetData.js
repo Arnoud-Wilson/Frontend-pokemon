@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 
 function GetAllData({search}) {
-    const [result, setResult] = useState({ });
+    const [result, setResult] = useState();
     const [abilities, setAbilities] = useState([ ]);
 
 
@@ -28,8 +28,9 @@ function GetAllData({search}) {
     void getData();
     }, [search]);
 
+
         return (
-            Object.keys(result).length > 0 &&
+            result !== undefined &&
             <div key={result.id} className="pokemon-tile">
             <h2>{result.name}</h2>
             <img src={result.sprites.front_default} alt="pokemon"/>

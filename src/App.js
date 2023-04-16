@@ -14,7 +14,7 @@ function App() {
             <Button
                 name="vorige"
                 onClick={() => setOffset(offset - 20)}
-                disabled = { offset <= 0 && true }
+                disabled = { offset <= 0 }
             />
             <Button
                 name="volgende"
@@ -30,7 +30,7 @@ function App() {
             <Button
                 name="vorige"
                 onClick={() => setOffset(offset - 20)}
-                disabled = { offset <= 0 && true }
+                disabled = { offset <= 0 }
             />
             <Button
                 name="volgende"
